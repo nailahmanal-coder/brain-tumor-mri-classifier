@@ -1,6 +1,8 @@
+cat > .gitignore << 'EOF'
 data/
 *.zip
 *.pth
 gradcam_output.png
 __pycache__/
 *.pyc
+EOF
