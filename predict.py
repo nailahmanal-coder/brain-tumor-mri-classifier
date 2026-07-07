@@ -7,7 +7,7 @@ DEVICE = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 CLASS_NAMES = ['glioma', 'meningioma', 'notumor', 'pituitary']
 
 def load_model():
-    model = models.resnet18(weights=None)
+    model = models.resnet50(weights=None)
     model.fc = nn.Linear(model.fc.in_features, 4)
     model.load_state_dict(torch.load("models/brain_tumor_model.pth", map_location=DEVICE))
     model = model.to(DEVICE)
